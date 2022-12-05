@@ -89,27 +89,28 @@ public class NonblockingSingleFileHTTPServer {
     }
 
     public static void main(String[] args){
-        if(args.length == 0){
-            System.out.println(
-                    "Usage: java NonblcokingSingleFileHTTPServer file port encoding"
-            );
-            return;
-        }
-
+//        if(args.length == 0){
+//            System.out.println(
+//                    "Usage: java NonblcokingSingleFileHTTPServer file port encoding"
+//            );
+//            return;
+//        }
+        String f = "file.txt";
         try{
-            String contentType = URLConnection.getFileNameMap().getContentTypeFor(args[0]);
-            Path file = FileSystems.getDefault().getPath(args[0]);
-            byte[] data = Files.readAllBytes(file);
-            ByteBuffer input = ByteBuffer.wrap(data);
+            String contentType = URLConnection.getFileNameMap().getContentTypeFor(f);
+            Path file = FileSystems.getDefault().getPath(f); // path 객체를 만들고
+            byte[] data = Files.readAllBytes(file); // byte array를 만들고
+            ByteBuffer input = ByteBuffer.wrap(data); // bytebuffer로 저장
 
             int port = 80;
 
             String encoding = "UTF-8";
 
-            NonblockingSingleFileHTTPServer server = new NonblockingSingleFileHTTPServer(input,encoding,contentType,port);
+            NonblockingSingleFileHTTPServer server =
+                    new NonblockingSingleFileHTTPServer(input,encoding,contentType,port);
             server.run();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException ex) {
+            System.err.println(ex);
         }
     }
 

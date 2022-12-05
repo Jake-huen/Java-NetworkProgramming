@@ -11,18 +11,16 @@ public class DictClient3 {
         String host = "dict.org";
         try{
             Socket soc = new Socket(host,2628);
-            OutputStream out = soc.getOutputStream();
-            Writer writer = new OutputStreamWriter(out,"UTF-8");
-            writer = new BufferedWriter(writer);
             InputStream in = soc.getInputStream();
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(in,"UTF-8"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in,"UTF-8"));
+            OutputStream out = soc.getOutputStream();
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out,"UTF-8"));
             String request = "DEFINE fd-eng-lat gold";
-            writer.write(request);
-            writer.flush();
+            bw.write(request);
+            bw.flush();
             soc.shutdownOutput();
 
-            for(String line = reader.readLine();line!=null;line=reader.readLine()){
+            for(String line = br.readLine();line!=null;line=br.readLine()){
                 System.out.println(line);
             }
             soc.close();
