@@ -14,22 +14,23 @@ public class ChargenServer {
 
     public static void main(String[] args){
 
-        int port = 19;
+        int port = 19; // 들을 PORT를 정해준다.
         System.out.println("Listening for connections on port "+port);
 
-        byte[] rotation = new byte[95*2];
-        for(byte i=' '; i<='~'; i++){
+        byte[] rotation = new byte[95*2]; // buffer의 크기를 정해준다.
+        for(byte i=' '; i<='~'; i++){ // buffer가 ~일 때까지
+            // System.out.println("this : " + (i-' '));
             rotation[i-' '] = i;
             rotation[i+95-' '] = i;
         }
 
         ServerSocketChannel serverChannel; // 서버용 채널
-        Selector selector;
+        Selector selector; // 열려있는 채널을 찾기 위함
         try {
-            serverChannel = ServerSocketChannel.open();
-            ServerSocket ss = serverChannel.socket();
-            InetSocketAddress address = new InetSocketAddress(port);
-            ss.bind(address);
+            serverChannel = ServerSocketChannel.open(); // ServerSocketChannel을 열기.
+            ServerSocket ss = serverChannel.socket(); // ServerSocketChannel에 Socket달기
+            InetSocketAddress address = new InetSocketAddress(port); // Socket주소 포트 사용
+            ss.bind(address); // Socket에 주소 달기
             serverChannel.configureBlocking(false); // NonBlocking mode로 동작
             selector = Selector.open(); // 모든 connection을 돌아서 processing 준비 되어있는 것 찾기
             serverChannel.register(selector, SelectionKey.OP_ACCEPT); // 새로운 connection accept할 준비 되어있음?
