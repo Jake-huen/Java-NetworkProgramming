@@ -41,6 +41,9 @@ NetworkProgramming
   ### 예시 화면
   ![image](https://user-images.githubusercontent.com/57055730/206975979-39ec23a4-10fd-40cc-81b4-41b9a31eba54.png)
   ![image](https://user-images.githubusercontent.com/57055730/206976006-a4453677-e3d1-4b8e-81e3-1030c11ab881.png)
+  
+  # 2. NonBlocking I/O에 대한 정리
+  https://west-comte-5a1.notion.site/Nonblocking-I-O-8a30255e28a34e8f948b037d9ee54726
 
     
   
