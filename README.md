@@ -4,6 +4,7 @@ NetworkProgramming
 # 1. 간단한 배송관리 서비스 with Java Swing, MySQL
 - 해당 프로젝트의ㅡ problem 폴더의 하위폴더에서 실행할 수 있다.
 - 클래스 설명와 실행 클래스 설명
+  
   [기본적인 UI를 위함]
   1) Product : order_id(상품 번호), admin_id(관리자 번호), name(상품명), status(배송 상태), created_at(생성 시간)
   2) User : pw(비밀번호)
@@ -12,6 +13,7 @@ NetworkProgramming
           로그인, 종료, 추가, 업데이트, 삭제를 할 수 있다.
           여기서 main을 실행하면 대략적인 모습을 볼 수 있다. (서버와 소통하지 않은 상태)
           ![image](https://user-images.githubusercontent.com/57055730/206972397-a8762e23-18e6-4f72-9758-eff02ab6fde0.png)
+  
   [서버와의 통신을 위함]
   4) HTTPRequestController : 서버에 Request를 하기 위한 요청 함수 API
     기능  
@@ -42,7 +44,8 @@ NetworkProgramming
   ![image](https://user-images.githubusercontent.com/57055730/206975979-39ec23a4-10fd-40cc-81b4-41b9a31eba54.png)
   ![image](https://user-images.githubusercontent.com/57055730/206976006-a4453677-e3d1-4b8e-81e3-1030c11ab881.png)
   
-  # 2. NonBlocking I/O에 대한 정리
+  # 2. NonBlocking I/O를 사용하기 위한 예시와 정리
+  - 실행코드는 NonBlockingIO폴더에 있다.
   https://west-comte-5a1.notion.site/Nonblocking-I-O-8a30255e28a34e8f948b037d9ee54726
 
     
