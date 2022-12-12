@@ -16,11 +16,11 @@ public class IntgenClient {
 
         try{
             SocketAddress address = new InetSocketAddress("localhost",port); // local에서 돌아가고 socket address 만들어냄
-            SocketChannel client = SocketChannel.open(address); //
-            ByteBuffer buffer = ByteBuffer.allocate(4);
+            SocketChannel client = SocketChannel.open(address); // SocketChannel에서 해당 주소 열기
+            ByteBuffer buffer = ByteBuffer.allocate(4); // Buffer로 받기
             IntBuffer view = buffer.asIntBuffer(); // view는 버퍼를 intbuffer로 생각해라.
 
-            for(int expected =0;;expected++){
+            for(int expected=0; ;expected++){
                 client.read(buffer);
                 int actual = view.get();
                 buffer.clear(); // 이게 없다면 -> buffer에 써야되는데 clear안하면 buffer의 position이 limit에 가있기 때문에 remaining이 없어서 buffer의 내용이 바뀌지 않고, 0이 나오게 되므로 expect는 1인데 buffer에 있는건 0이라서 break가 된다.
