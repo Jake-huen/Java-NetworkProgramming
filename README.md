@@ -1,7 +1,7 @@
 # Java_NetworkProgramming
 NetworkProgramming
 
-1. 간단한 배송관리 서비스 with Java Swing, MySQL
+#1. 간단한 배송관리 서비스 with Java Swing, MySQL
 - 해당 프로젝트의ㅡ problem 폴더의 하위폴더에서 실행할 수 있다.
 - 클래스 설명와 실행 클래스 설명
   [기본적인 UI를 위함]
