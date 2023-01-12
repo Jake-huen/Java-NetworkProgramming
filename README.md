@@ -1,5 +1,5 @@
 # Java_NetworkProgramming
-NetworkProgramming
+배송 관리 서비스 during networkprogramming + class source code
 
 # 1. 간단한 배송관리 서비스 with Java Swing, MySQL
 - 해당 프로젝트의ㅡ problem 폴더의 하위폴더에서 실행할 수 있다.
