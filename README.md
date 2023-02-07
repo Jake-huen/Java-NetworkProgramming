@@ -1,4 +1,6 @@
 # Java_NetworkProgramming
+- 네트워크 프로그래밍 강의에서 들은 내용을 기록하기 위한 Repo입니다
+
 배송 관리 서비스 during networkprogramming + class source code
 
 # 1. 간단한 배송관리 서비스 with Java Swing, MySQL
